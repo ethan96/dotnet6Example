@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyApi1</name>
+    </assembly>
+    <members>
+        <member name="M:MyApi1.Controllers.TestApiController.GetMes3Data">
+            <summary>
+            Test MES3 EF DB first
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

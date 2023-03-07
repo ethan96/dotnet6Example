@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test page</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script><!--Ajax--><!--jQuery .ajax{}-->
+</head>
+
+<body>
+    <div>
+        <button type="button" onclick="helloWorld();">Hello World</button>
+    </div>
+    <div>
+        <span id="n1">N/A</span>
+    </div>
+    <div>
+        <span id="n2">N/A</span>
+    </div>
+    <div>
+        <span id="n3">N/A</span>
+    </div>
+
+
+
+
+
+    
+    <script type="text/javascript">
+        function helloWorld() {
+            var data = { max: 100, min: 30 };
+            axios
+                .post('/WeatherForecast', data)
+                .then(function (response) {
+                    if (response.status == 200) {
+                        if (response.data.length > 0) {
+                            document.getElementById("n1").innerText = response.data[0];
+                            document.getElementById("n2").innerText = response.data[1];
+                            document.getElementById("n3").innerText = response.data[2];
+                        }
+                    }
+                })
+                .catch(function (error) {
+                    alert(error);
+                });
+            return false;
+        };
+    </script>
+</body>
+
+</html>
